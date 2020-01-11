@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 // #region Interfaces
 interface HeaderProps {
@@ -8,7 +8,7 @@ interface HeaderProps {
 // #endregion Interfaces
 
 // #region Component
-function Header(props: HeaderProps): JSX.Element {
+export const Header: FunctionComponent<HeaderProps> = (props) => {
   return (
     <header
       style={{
@@ -35,12 +35,4 @@ function Header(props: HeaderProps): JSX.Element {
     </header>
   );
 }
-
 // #endregion Component
-
-// #region Export
-export {
-  Header,
-  HeaderProps,
-}
-// #endregion Export

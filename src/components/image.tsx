@@ -1,7 +1,5 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
-import { CoreUtils } from "./core-utils";
+import React, { FunctionComponent } from "react"
+import Img from "gatsby-image"
 import { usePlaceHolderImage } from "../hooks/use-placeholder-Image";
 
 /*
@@ -18,36 +16,10 @@ import { usePlaceHolderImage } from "../hooks/use-placeholder-Image";
 // #region Interfaces
 // #endregion Interfaces
 
-function placeHolderImage(): any {
-  const image = usePlaceHolderImage();
-  return null;
-}
-
 // #region Component
-class ImageExample extends React.Component<{}, {}> {
-  // #region Constructor
-  constructor(props) {
-    super(props);
-    CoreUtils.bindAll(this);
-  }
-  // #endregion Constructor
-
-  // #region Public Methods
-  public render(): JSX.Element {
-    return (
-      //<Img fluid = { placeHolderImage() } />
-      <div></div>
-    );
-  }
-  // #endregion Public Methods
-
-  // #region Private Methods
-  // #endregion Private Methods
-};
-// #endregion Component
-
-// #region Export
-export {
-  ImageExample,
+export const ImageExample: FunctionComponent = () => {
+  return (
+    <Img fluid = { usePlaceHolderImage() } />
+  );
 }
-// #endregion Export
+// #endregion Component
