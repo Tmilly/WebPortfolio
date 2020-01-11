@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
+import { CoreUtils } from "./core-utils";
+import { usePlaceHolderImage } from "../hooks/use-placeholder-Image";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,20 +15,39 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+// #region Interfaces
+// #endregion Interfaces
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+function placeHolderImage(): any {
+  const image = usePlaceHolderImage();
+  return null;
 }
 
-export default Image
+// #region Component
+class ImageExample extends React.Component<{}, {}> {
+  // #region Constructor
+  constructor(props) {
+    super(props);
+    CoreUtils.bindAll(this);
+  }
+  // #endregion Constructor
+
+  // #region Public Methods
+  public render(): JSX.Element {
+    return (
+      //<Img fluid = { placeHolderImage() } />
+      <div></div>
+    );
+  }
+  // #endregion Public Methods
+
+  // #region Private Methods
+  // #endregion Private Methods
+};
+// #endregion Component
+
+// #region Export
+export {
+  ImageExample,
+}
+// #endregion Export
