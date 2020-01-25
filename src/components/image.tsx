@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react"
 import Img from "gatsby-image"
+import React, { FunctionComponent } from "react"
 import { usePlaceHolderImage } from "../hooks/use-placeholder-Image";
 
 /*

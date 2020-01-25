@@ -1,27 +1,18 @@
-import { Link } from 'gatsby'
-import React, { FunctionComponent } from 'react'
+import { Link } from 'gatsby';
+import React, { FunctionComponent } from 'react';
 
 // #region Interfaces
-interface HeaderProps {
+interface IHeaderProps {
   siteTitle: string;
 }
 // #endregion Interfaces
 
 // #region Component
-export const Header: FunctionComponent<HeaderProps> = (props) => {
+export const Header: FunctionComponent<IHeaderProps> = (props) => {
   return (
-    <header
-      style={{
-        background: `rebeccapurple`,
-        marginBottom: `1.45rem`,
-      }}>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}>
-        <h1 style={{ margin: 0 }}>
+    <header>
+      <div>
+        <h1>
           <Link
             to="/"
             style={{

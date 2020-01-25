@@ -1,0 +1,177 @@
+/*-----------------------------*\
+    TOOLS - MIXINS
+\*-----------------------------*/
+
+// Grid Mixins
+
+@mixin grid {
+    @include clearfix();
+    display: block;
+    width: 100%;
+}
+
+@mixin grid-column($span: 1) {
+    display: block;
+    float: left;
+    margin-left: $grid-gutter;
+
+    @if $span < 1 {
+        $span: 1;
+    }
+
+    @if $span > 12 {
+        $span: 12;
+    }
+
+    @if ($span == 1) {
+        width: 14.16%;
+        &:nth-child(4n + 1) {
+            margin-left: 0;
+        }
+    } @else if ($span == 2) {
+        width: 31.33%;
+        &:nth-child(3n + 1) {
+            margin-left: 0;
+        }
+    } @else if ($span == 3) {
+        width: 48.5%;
+        &:nth-child(2n + 1) {
+            margin-left: 0;
+        }
+    } @else if ($span == 4) {
+        width: 65.66%;
+    } @else if ($span == 5) {
+        width: 82.83%;
+    } @else {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+@mixin grid-push($span: 1) {
+    @if ($span == 1) {
+        margin-left: 17.16%;
+    } @else if ($span == 2) {
+        margin-left: 34.44%;
+    } @else if ($span == 3) {
+        margin-left: 51.5%;
+    } @else if ($span == 4) {
+        margin-left: 68.66%;
+    } @else if ($span == 5) {
+        margin-left: 85.83%;
+    } @else {
+        margin-left: $grid-gutter;
+    }
+}
+
+// Responsive Mixins
+
+@mixin respond-to($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+// Rem Mixins
+@mixin rem-fallback($property, $values...) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+
+    @for $i from 1 through $max {
+        $value: strip-units(nth($values, $i));
+        $pxValues: #{$pxValues + $value}px;
+
+        @if $i < $max {
+            $pxValues: #{pxValues + " "};
+        }
+    }
+
+    @for $i from 1 through $max {
+        $value: strip-units(nth($values, $i));
+        $remValues: #{$remValues + (rem($value))};
+
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
+}
+
+// Font Mixins
+@mixin font($family: $font-primary, $size: "base", $weight: 400, $line-height: none) {
+    @include font-size($size);
+    font-family: $family;
+    font-weight: $weight;
+
+    @if $line-height != none {
+        @include line-height($line-height);
+    }
+}
+
+@mixin font-size($size: "base") {
+    @include rem-fallback(font-size, get-font-size($size));
+}
+
+@mixin line-height($size) {
+    @include rem-fallback(line-height, $size);
+}
+
+// Box Model Mixins
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin width($value) {
+    @include rem-fallback(width, $value);
+}
+
+@mixin margin($values...) {
+    @include rem-fallback(margin, $values...);
+}
+
+@mixin margin-bottom($value) {
+    @include rem-fallback(margin-bottom, $value);
+}
+
+@mixin margin-left($value) {
+    @include rem-fallback(margin-left, $value);
+}
+
+@mixin margin-right($value) {
+    @include rem-fallback(margin-right, $value);
+}
+
+@mixin margin-top($value) {
+    @include rem-fallback(margin-top, $value);
+}
+
+@mixin padding($values...) {
+    @include rem-fallback(padding, $values...);
+}
+
+@mixin padding-bottom($value) {
+    @include rem-fallback(padding-bottom, $value);
+}
+
+@mixin padding-left($value) {
+    @include rem-fallback(padding-left, $value);
+}
+
+@mixin padding-right($value) {
+    @include rem-fallback(padding-right, $value);
+}
+
+@mixin padding-top($value) {
+    @include rem-fallback(padding-top, $value);
+}

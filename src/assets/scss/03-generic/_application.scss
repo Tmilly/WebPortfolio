@@ -1,0 +1,32 @@
+/*-----------------------------*\
+    GENERIC - APPLICATION
+\*-----------------------------*/
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// TODO: restlye this
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;  // TODO: base background color for application.
+    font-size: get-font-size("base");
+    -webkit-font-smoothing: antialiased; // TODO: look into better alternatives then these font smoothing solutions
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// TODO: restyle this
+hr {
+    @include margin(96px, 0, 96px, 0);
+    border: 1px solid #ddd;
+    clear: both;
+    height: 2px;
+    width: 100%;
+}

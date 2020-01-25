@@ -1,0 +1,43 @@
+/*-----------------------------*\
+    TOOLS - FUNCTIONS
+\*-----------------------------*/
+
+
+// Color Functions
+
+@function get-color($palette: "theme", $color: "primary") {
+    @return map-get(map-get($color, $palette), $color);
+}
+
+// Font Functions
+
+@function get-font-size($size: "base") {
+    @if not map-has-key($font-sizes, $size) {
+        @return $size;
+    }
+
+    @return map-get($font-sizes, $size);
+}
+
+// Icon Functions
+
+@function get-icon($icon) {
+    @return map-get($icons, $icon);
+}
+
+// Rem Functions
+@function rem($px, $baseValue: 16px) {
+    @if not unitless($px) {
+        $px: strip-units($px);
+    }
+
+    @if not unitless($baseValue) {
+        $baseValue: strip-units($baseValue);
+    }
+
+    @return ($px / $baseValue) * 1rem;
+}
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}

@@ -1,8 +1,7 @@
-import React from "react"
 import { Link } from "gatsby"
-
-import { Layout } from "../components/layout"
+import React from "react"
 import { ImageExample } from "../components/image"
+import { Layout } from "../components/layout"
 import { SearchEngineOptimizer } from "../components/seo"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -14,14 +13,8 @@ export default function IndexPage(): JSX.Element {
   const { title } = useSiteMetadata();
   return (
     <Layout siteTitle = { title }>
-      <SearchEngineOptimizer title= { "Home" } />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <ImageExample />
-      </div>
-      <Link to = { "/page-2/" } >Go to page 2</Link>
+      <SearchEngineOptimizer pageTitle= { "Home" } />
+      <h1>test</h1>
     </Layout>
   );
 }

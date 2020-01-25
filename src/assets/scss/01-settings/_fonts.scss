@@ -1,0 +1,23 @@
+/*-----------------------------*\
+    SETTINGS - FONTS
+\*-----------------------------*/
+
+// Icomoon svgs for icons
+// TODO: Pick Icons
+@font-face {
+
+}
+
+// TODO: Pick font sizes
+$font-sizes: (
+    "large": 32px,
+    "base": 16px,
+    "small": 12px,
+) !default;
+
+
+// TODO: Pick fonts
+$font-primary: "Open Sans", Arial, sans-serif !default;
+$font-secondary: "Open Sans", Arial, sans-serif !default;
+$font-accent: "Open Sans", Arial, sans-serif !default;
+$font-icon: "icomoon" !default;

@@ -10,52 +10,52 @@ import Helmet from 'react-helmet'
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 // #region Interfaces
-interface SearchEngineOptimizerProps {
-  title:       string,
+interface ISearchEngineOptimizerProps {
+  pageTitle:       string,
 }
 // #endregion Interfaces
 
 // #region Component
-export const SearchEngineOptimizer: FunctionComponent<SearchEngineOptimizerProps> = (props) => {
-  const { author, description } = useSiteMetadata();
+export const SearchEngineOptimizer: FunctionComponent<ISearchEngineOptimizerProps> = (props) => {
+  const { author, description, title } = useSiteMetadata();
   const meta = [
     {
+      content: description,
       name: `description`,
-      content: description,
     },
     {
+      content: props.pageTitle,
       property: `og:title`,
-      content: props.title,
     },
     {
+      content: description,
       property: `og:description`,
-      content: description,
     },
     {
-      property: `og:type`,
       content: `website`,
+      property: `og:type`,
     },
     {
-      name: `twitter:card`,
       content: `summary`,
+      name: `twitter:card`,
     },
     {
-      name: `twitter:creator`,
       content: author,
+      name: `twitter:creator`,
     },
     {
+      content: props.pageTitle,
       name: `twitter:title`,
-      content: props.title,
     },
     {
-      name: `twitter:description`,
       content: description,
+      name: `twitter:description`,
     },
   ]
   return (
     <Helmet
-      title          = { props.title }
-      titleTemplate  = {`%s | ${props.title}`}
+      title          = { title }
+      titleTemplate  = {`${title} | ${props.pageTitle}`}
       meta           = { meta.concat(meta) } />
   );
 }

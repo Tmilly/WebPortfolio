@@ -1,0 +1,36 @@
+/*-----------------------------*\
+    OBJECTS - GRID
+\*-----------------------------*/
+
+.o-grid {
+    @include grid();
+    @include clearfix();
+
+    &.-gutterless {
+        padding: 0;
+    }
+
+    &__column {
+        @include grid-column();
+
+        @for $i from 1 through 6 {
+            &.-span-#{$i} {
+                @include grid-column($i);
+            }
+
+            @for $i from 1 through 6 {
+                &.-push-#{$i} {
+                    @include grid-push($i);
+                }
+            }
+        }
+    }
+
+    &.-y-center {
+        display: flex;
+
+        .o-grid__column {
+            align-self: center;
+        }
+    }
+}

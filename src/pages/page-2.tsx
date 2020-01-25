@@ -1,6 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
-
+import React from "react"
 import { Layout } from "../components/layout"
 import { SearchEngineOptimizer } from "../components/seo"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
@@ -13,7 +12,7 @@ export default function SecondPage(): JSX.Element {
   const { title, description, author } = useSiteMetadata();
   return (
     <Layout siteTitle = { title }>
-      <SearchEngineOptimizer title = { "Page two" } />
+      <SearchEngineOptimizer pageTitle = { "Page two" } />
       <h1>Hi from the second page</h1>
       <p> Welcome to page 2</p>
       <Link to = { "/" }>Go back to the homepage</Link>

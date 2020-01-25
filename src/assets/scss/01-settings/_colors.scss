@@ -1,0 +1,23 @@
+/*-----------------------------*\
+    SETTINGS - COLORS
+\*-----------------------------*/
+
+// TODO: Pick colors
+$colors: (
+    "theme": (
+        "primary":   #0D6082,
+        "secondary": #0CABA6,
+        "accent1":   #2CB714,
+        "accent2":   #D0E00E,
+    ),
+    "status": (
+        "warning": #F5B300,
+        "error":   #BD2F00,
+        "success": #03632D,
+    ),
+    "neutral": (
+        "white":   #FFFFFF,
+        "dark":    #222222,
+        "darkest": #0D1007,
+    )
+) !default;
