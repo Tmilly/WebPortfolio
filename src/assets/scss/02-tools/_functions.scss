@@ -6,7 +6,7 @@
 // Color Functions
 
 @function get-color($palette: "theme", $color: "primary") {
-    @return map-get(map-get($color, $palette), $color);
+    @return map-get(map-get($colors, $palette), $color);
 }
 
 // Font Functions

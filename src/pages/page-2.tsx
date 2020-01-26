@@ -9,7 +9,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 // #region Component
 export default function SecondPage(): JSX.Element {
-  const { title, description, author } = useSiteMetadata();
+  const { title } = useSiteMetadata();
   return (
     <Layout siteTitle = { title }>
       <SearchEngineOptimizer pageTitle = { "Page two" } />

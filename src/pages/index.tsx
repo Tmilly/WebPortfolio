@@ -1,6 +1,4 @@
-import { Link } from "gatsby"
 import React from "react"
-import { ImageExample } from "../components/image"
 import { Layout } from "../components/layout"
 import { SearchEngineOptimizer } from "../components/seo"
 import { useSiteMetadata } from "../hooks/use-site-metadata"

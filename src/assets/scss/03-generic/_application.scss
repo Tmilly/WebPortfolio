@@ -20,6 +20,7 @@ html {
     font-size: get-font-size("base");
     -webkit-font-smoothing: antialiased; // TODO: look into better alternatives then these font smoothing solutions
     -moz-osx-font-smoothing: grayscale;
+    background-color: get-color("neutral", "dark");
 }
 
 // TODO: restyle this

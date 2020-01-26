@@ -1,3 +1,8 @@
 /*-----------------------------*\
     ELEMENTS - PARAGRAPHS
 \*-----------------------------*/
+
+p {
+    @include font($font-primary, "base", 400, 24px);
+    color: get-color("neutral", "white");
+}

@@ -3,10 +3,16 @@
 \*-----------------------------*/
 
 // Icomoon svgs for icons
-// TODO: Pick Icons
-@font-face {
-
+@font-face {font-family: "Arame-Regular";
+    src: url("../font/548e77e130ea884c764acabe1ba1ad63.eot"); /* IE9*/
+    src: url("../font/548e77e130ea884c764acabe1ba1ad63.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../font/548e77e130ea884c764acabe1ba1ad63.woff2") format("woff2"), /* chrome、firefox */
+    url("../font/548e77e130ea884c764acabe1ba1ad63.woff") format("woff"), /* chrome、firefox */
+    url("../font/548e77e130ea884c764acabe1ba1ad63.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../font/548e77e130ea884c764acabe1ba1ad63.svg#Arame-Regular") format("svg"); /* iOS 4.1- */
 }
+
+// TODO: Pick icons
 
 // TODO: Pick font sizes
 $font-sizes: (
@@ -17,7 +23,7 @@ $font-sizes: (
 
 
 // TODO: Pick fonts
-$font-primary: "Open Sans", Arial, sans-serif !default;
+$font-primary: "Arame-Regular", Arial, sans-serif !default;
 $font-secondary: "Open Sans", Arial, sans-serif !default;
 $font-accent: "Open Sans", Arial, sans-serif !default;
 $font-icon: "icomoon" !default;

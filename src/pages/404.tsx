@@ -8,7 +8,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata";
 
 // #region Component
 export default function NotFoundPage(): JSX.Element {
-  const { title, description, author } = useSiteMetadata();
+  const { title } = useSiteMetadata();
   return (
     <Layout siteTitle = { title } >
       <SearchEngineOptimizer pageTitle = { "404: Not Found" }/>

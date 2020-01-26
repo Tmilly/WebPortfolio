@@ -13,14 +13,7 @@ export const Header: FunctionComponent<IHeaderProps> = (props) => {
     <header>
       <div>
         <h1>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}>
-            {props.siteTitle}
-          </Link>
+          <div/>
         </h1>
       </div>
     </header>
